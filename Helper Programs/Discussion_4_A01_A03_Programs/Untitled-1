@@ -1,0 +1,149 @@
+#include <string_view>
+#include<iostream>
+
+class Base
+{
+protected:
+    int m_value;
+ 
+public:
+    Base(int value): m_value{ value }{}
+ 
+    std::string_view getName() const { return "Base"; }
+    int getValue() const { return m_value; }
+};
+ 
+class Derived: public Base
+{
+public:
+    Derived(int value): Base{ value }
+    {
+    }
+ 
+    std::string_view getName() const { return "Derived"; }
+    int getValueDoubled() const { return m_value * 2; }
+};
+int main()
+{
+    Derived derived{ 5 };
+    std::cout << "derived is a " << derived.getName() << " and has value " << derived.getValue() << '\n';
+ 
+    Derived &rDerived{ derived };
+    std::cout << "rDerived is a " << rDerived.getName() << " and has value " << rDerived.getValue() << '\n';
+ 
+    Derived *pDerived{ &derived };
+    std::cout << "pDerived is a " << pDerived->getName() << " and has value " << pDerived->getValue() << '\n';
+ 
+    return 0;
+}
+
+#include <iostream>
+ 
+int main(){
+    Derived derived{ 5 };
+ 
+    // These are both legal!
+    Base &rBase{ derived };
+    Base *pBase{ &derived };
+ 
+    std::cout << "derived is a " << derived.getName() << " and has value " << derived.getValue() << '\n';
+    std::cout << "rBase is a " << rBase.getName() << " and has value " << rBase.getValue() << '\n';
+    std::cout << "pBase is a " << pBase->getName() << " and has value " << pBase->getValue() << '\n';
+ 
+    return 0;
+}
+
+void report(const Cat &cat)
+{
+    std::cout << cat.getName() << " says " << cat.speak() << '\n';
+}
+ 
+void report(const Dog &dog)
+{
+    std::cout << dog.getName() << " says " << dog.speak() << '\n';
+}
+
+int main()
+{
+    Cat fred{ "Fred" };
+    Cat misty{ "Misty" };
+    Cat zeke{ "Zeke" };
+ 
+    Dog garbo{ "Garbo" };
+    Dog pooky{ "Pooky" };
+    Dog truffle{ "Truffle" };
+ 
+    // Set up an array of pointers to animals, and set those pointers to our Cat and Dog objects
+    Animal *animals[]{ &fred, &garbo, &misty, &pooky, &truffle, &zeke };
+    for (const auto animal : animals)
+        std::cout << animal->getName() << " says " << animal->speak() << '\n';
+ 
+    return 0;
+}
+Fred says ???
+Garbo says ???
+Misty says ???
+Pooky says ???
+Truffle says ???
+Zeke says ???
+
+#include <iostream>
+#include <string_view>
+class Base
+{
+public:
+   virtual std::string_view getName() const { return "Base"; } // note addition of virtual keyword
+};
+class Derived: public Base
+{
+public:
+   virtual std::string_view getName() const { return "Derived"; }
+};
+int main()
+{
+   Derived derived;
+   Base &rBase{ derived };
+   std::cout << "rBase is a " << rBase.getName() << '\n';
+   return 0;
+}
+
+class Base{
+public:
+    virtual int getValue() const { return 5; }
+};
+ 
+class Derived: public Base{
+public:
+     int getValue() const { return 6; }
+};
+
+class Base
+{
+public:
+    virtual void function1() {};
+    virtual void function2() {};
+};
+ 
+class D1: public Base
+{
+public:
+    virtual void function1() {};
+};
+ 
+class D2: public Base
+{
+public:
+    virtual void function2() {};
+};
+int main()
+{
+    D1 d1;
+}
+
+int main()
+{
+    D1 d1;
+    Base *dPtr = &d1;
+ 
+    return 0;
+}

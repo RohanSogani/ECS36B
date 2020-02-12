@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "/Users/rohansogani/Documents/Projects/grading"
+		},
+		{
+			"path": "/Users/rohansogani/Documents/Projects/Shell-Scripts"
+		},
+		{
+			"path": "/Users/rohansogani/Documents/Courses/ECS 36B/Helper Programs"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"string": "cpp",
+			"__locale": "cpp",
+			"__string": "cpp",
+			"string_view": "cpp",
+			"iostream": "cpp",
+			"ostream": "cpp"
+		}
+	}
+}

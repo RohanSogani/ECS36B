@@ -1,0 +1,236 @@
+class Something{
+public:
+    int m_value = 1;
+};
+ 
+int main(){
+    Something first;
+    Something second;
+    
+    first.m_value = 2;
+ 
+    std::cout << first.m_value << '\n';
+    std::cout << second.m_value << '\n';
+ 
+    return 0;
+}
+
+class Something{
+public:
+    static int s_value;
+};
+ 
+int Something::s_value = 1;
+ 
+int main(){
+    Something first;
+    Something second;
+ 
+    first.s_value = 2;
+ 
+    std::cout << first.s_value << '\n';
+    std::cout << second.s_value << '\n';
+    return 0;
+}
+
+
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+class Something{
+public:
+    static int s_value; // declares the static member variable
+};
+ 
+int Something::s_value = 1; // defines the static member variable (we'll discuss this section below)
+ 
+int main(){
+    // note: we're not instantiating any objects of type Something
+ 
+    Something::s_value = 2;
+    std::cout << Something::s_value << '\n';
+    return 0;
+}
+
+class IDGenerator{
+private:
+    static int s_nextID; // Here's the declaration for a static member
+ 
+public:
+     static int getNextID(); // Here's the declaration for a static function
+};
+ 
+// Here's the definition of the static member outside the class.  Note we don't use the static keyword here.
+// We'll start generating IDs at 1
+int IDGenerator::s_nextID = 1;
+ 
+// Here's the definition of the static function outside of the class.  Note we don't use the static keyword here.
+int IDGenerator::getNextID() { return s_nextID++; } 
+ 
+int main(){
+    for (int count=0; count < 5; ++count)
+        std::cout << "The next ID is: " << IDGenerator::getNextID() << '\n';
+ 
+    return 0;
+}
+
+#include <iostream>
+#include <string>
+ 
+class Person{
+public:
+    std::string m_name;
+    int m_age;
+ 
+    Person(std::string name = "", int age = 0)
+        : m_name(name), m_age(age)
+    {
+    }
+ 
+    std::string getName() const { return m_name; }
+    int getAge() const { return m_age; }
+ 
+};
+ 
+// BaseballPlayer publicly inheriting Person
+class BaseballPlayer : public Person{
+public:
+    double m_battingAverage;
+    int m_homeRuns;
+ 
+    BaseballPlayer(double battingAverage = 0.0, int homeRuns = 0)
+       : m_battingAverage(battingAverage), m_homeRuns(homeRuns)
+    {
+    }
+};
+ 
+int main(){
+    // Create a new BaseballPlayer object
+    BaseballPlayer joe;
+    // Assign it a name (we can do this directly because m_name is public)
+    joe.m_name = "Joe";
+    // Print out the name
+    std::cout << joe.getName() << '\n'; // use the getName() function we've acquired from the Person base class
+ 
+    return 0;
+}
+
+
+class Base{
+public:
+    int m_id;
+ 
+    Base(int id=0) : m_id(id){
+        std::cout << "Base\n";
+    }
+ 
+    int getId() const { return m_id; }
+};
+ 
+class Derived: public Base{
+public:
+    double m_cost;
+ 
+    Derived(double cost=0.0) : m_cost(cost){
+        std::cout << "Derived\n";
+    }
+ 
+    double getCost() const { return m_cost; }
+};
+ 
+int main(){
+    std::cout << "Instantiating Base\n";
+    Base cBase;
+ 
+    std::cout << "Instantiating Derived\n";
+    Derived cDerived;
+ 
+    return 0;
+}
+
+#include<iostream>
+using namespace std;
+
+class B{
+    private:
+        int x;
+    public:
+        B(int x_val): x(x_val) {};
+        void displayB() {
+            cout<<"X = "<<x<<endl;
+        }
+
+};
+
+class D: public B {
+    private:
+        int y;
+    public:
+        D(){};
+        void displayB() {
+            cout<<"Y = "<<y<<endl;
+        }
+};
+int main(){
+     D derived;
+};
+
+class Apple: public Fruit{
+.
+.
+}
+
+class Room{
+.
+Table table = new Table ();
+.
+.
+}
+
+int max(int x, int y)
+{
+    return (x > y) ? x : y;
+}
+
+double max(double x, double y)
+{
+    return (x > y) ? x : y;
+}
+
+T max(T x, T y)
+{
+    return (x > y) ? x : y;
+}
+
+template <typename T> // this is the template parameter declaration
+T max(T x, T y)
+{
+    return (x > y) ? x : y;
+}
+
+template <typename T1, typename T2>
+// template function here
+
+template <typename T> // this is the template parameter declaration
+const T& max(const T& x, const T& y)
+{
+    return (x > y) ? x : y;
+}
+
+int i{ max(3, 7) }; // calls max(int, int)
+
+const int& max(const int &x, const int &y)
+{
+    return (x > y) ? x : y;
+}
