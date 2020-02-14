@@ -1,6 +1,6 @@
 # ECS36B
 
-This repo is intented for students enrolled in ECS 36B, offered by the Department of [Computer Science @ University of California, Davis](https://www.cs.ucdavis.edu/).\
+This repo is intented for students enrolled in ECS 36B, offered by the Department of [Computer Science @ University of California, Davis](https://www.cs.ucdavis.edu/).
 
 ## Goals 
 1. Contains all the slides and programs that I presented for my discussions during Winter 2020.
