@@ -1,2 +1,0 @@
-make class6 fails since the Value class has a reference member, which cannot
-be initialized by the default constructor
