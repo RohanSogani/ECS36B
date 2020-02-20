@@ -2,7 +2,7 @@
 class Base
 {
 public:
-    ~Base() // note: not virtual
+    virtual ~Base() // note: not virtual
     {
         std::cout << "Calling ~Base()\n";
     }
