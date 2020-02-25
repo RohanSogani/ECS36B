@@ -18,3 +18,10 @@ int main() {
 
     return 0;
 }
+
+void foo(const int i,const int *j,const int& k, int * const m){
+    i++;
+    j++;
+    k++;
+    (*m)++;
+}
