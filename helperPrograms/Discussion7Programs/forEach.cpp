@@ -8,7 +8,7 @@ using namespace std;
 
 void printx2(int a) 
 { 
-	cout << a * 2 << " "; 
+	cout << a * a << " "; 
 } 
 
 struct Class2 

@@ -234,3 +234,47 @@ const int& max(const int &x, const int &y)
 {
     return (x > y) ? x : y;
 }
+
+bool compareInterval(Interval i1, Interval i2) { 
+    return (i1.start < i2.start); 
+}
+
+class classCompareInterval{
+    public:
+        bool operator()(const Interval &i1, const Interval &i2) {
+            return (i1.start < i2.start); 
+        }
+};  
+
+#include <iostream>
+
+struct absValue
+{
+	float operator()(float f) {
+		return f > 0 ? f : -f;
+	}
+};
+
+int main( ) 
+{ 
+	using namespace std;
+
+	float f = -123.45;
+	absValue aObj;
+	float abs_f = aObj(f);
+	cout << "f = " << f << " abs_f = " << abs_f << endl;
+	return 0; 
+}
+
+Class X {
+public:
+	// define "function call" operator
+	return-value operator() (arguments) const;
+	...
+};
+
+X fn;
+...
+fn(arg1, arg2);	// call operator () for function object fn
+
+fn.operator()(arg1,arg2);	// call operator () for function object fn
