@@ -278,3 +278,64 @@ X fn;
 fn(arg1, arg2);	// call operator () for function object fn
 
 fn.operator()(arg1,arg2);	// call operator () for function object fn
+
+
+char buf[10];
+cin >> buf;
+
+#include <iomanip.h>
+char buf[10];
+cin >> setw(10) >> buf;
+
+
+2
+3
+4
+5
+6
+7
+8
+int main()
+{
+    char ch;
+    while (cin >> ch)
+        cout << ch;
+ 
+    return 0;
+}
+
+int main()
+{
+    char ch;
+    while (cin.get(ch))
+        cout << ch;
+ 
+    return 0;
+}
+Now wh
+
+int main()
+{
+    char strBuf[11];
+    // Read up to 10 characters
+    cin.get(strBuf, 11);
+    cout << strBuf << endl;
+ 
+    // Read up to 10 more characters
+    cin.get(strBuf, 11);
+    cout << strBuf << endl;
+    return 0;
+}
+
+int main()
+{
+    char strBuf[11];
+    // Read up to 10 characters
+    cin.get(strBuf, 11);
+    cout << strBuf << endl;
+ 
+    // Read up to 10 more characters
+    cin.get(strBuf, 11);
+    cout << strBuf << endl;
+    return 0;
+}

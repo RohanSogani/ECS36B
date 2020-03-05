@@ -8,16 +8,16 @@ using namespace std;
 
 void printx2(int a) 
 { 
-	cout << a * a << " "; 
+	cout << a * 2 << " "; 
 } 
 
-struct Class2 
+/* struct Class2 
 { 
 	void operator() (int a) 
 	{ 
 		cout << a * 3 << " "; 
 	} 
-} ob1; 
+} ob1;  */
 
 
 int main() 
@@ -29,8 +29,8 @@ int main()
 	
 	cout << endl; 
 	
-	cout << "Multiple of 3 of elements are : "; 
-	for_each(arr1.begin(), arr1.end(), ob1); 
+	/* cout << "Multiple of 3 of elements are : "; 
+	for_each(arr1.begin(), arr1.end(), ob1); */ 
 	
 	cout << endl; 
 
@@ -42,8 +42,8 @@ int main()
 	
 	cout << endl; 
 	
-	cout << "Multiple of 3 of elements are : "; 
-	for_each(arr, arr + 5, ob1); 
+	/* cout << "Multiple of 3 of elements are : "; 
+	for_each(arr, arr + 5, ob1); */ 
 	
 	cout << endl; 
 	
