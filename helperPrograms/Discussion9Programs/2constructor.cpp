@@ -14,7 +14,7 @@ Test::Test()  {
 int main() 
 { 
     cout<<"Start \n"; 
-    Test t1(); 
+    Test t1; 
     cout<<"End \n"; 
     return 0; 
 }

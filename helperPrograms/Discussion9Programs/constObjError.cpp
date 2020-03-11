@@ -10,7 +10,7 @@ public:
 };
   
 int main() {
-    const Test t;  
+    Test t;  
     cout << t.getValue();
     return 0;
 }
