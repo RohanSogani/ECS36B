@@ -14,6 +14,7 @@ list<string> l;
  	// Initialize a vector with std::list
 	vector<string> vecOfStr(l.begin(), l.end());
 	
+	
 	for(string str : vecOfStr)
 		cout<<str;
 
